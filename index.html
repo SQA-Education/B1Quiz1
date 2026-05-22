@@ -178,9 +178,9 @@ function submitToTeacher(){
   if(window._formPayload){
     for(const[k,v]of Object.entries(window._formPayload)){formData.append(k,v);}
   }
-  fetch('https://docs.google.com/forms/d/e/1FAIpQLSd--80V_b4ovCyNW76LAYTbGy30gvafPtU39a3ijUWLO5mGng/formResponse',{method:'POST',mode:'no-cors',body:formData}).catch(function(){});
-  const status=document.getElementById('submitStatus');
-  if(status){status.innerHTML='✅ <strong>Results submitted successfully!</strong><br><span style="font-size:0.9em;color:#555">Your teacher has received your quiz results.</span>';status.style.display='block';}
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSdZVRZEVzWY1S366BSXeYdGhcblVN37RRwT81nOb9msAor9wA/formResponse',{method:'POST',mode:'no-cors',body:formData}).catch(function(){});
+  const statusDiv=document.getElementById('submitStatus');
+  if(statusDiv){statusDiv.innerHTML='✅ <strong>Results submitted successfully!</strong><br><span style="font-size:0.9em;color:#555">Your teacher has received your quiz results.</span>';statusDiv.style.display='block';}
   if(btn){btn.style.display='none';}
 }
 function goToDashboard(){window.location.href='b1-quiz-dashboard.html';}
